@@ -9,11 +9,11 @@ app.get("/", (req, res) => {
     return res.status(200).json({message: "Welcome to interest nova server."});
 })
 
-app.post("/", async (req, res) => {
+app.get("/search", async (req, res) => {
 
     try {
 
-        const { searchQuery } = req.body.data;
+        const { searchQuery } = req.query;
 
         if (searchQuery) {
 
