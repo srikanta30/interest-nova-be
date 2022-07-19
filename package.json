@@ -1,0 +1,28 @@
+{
+  "name": "interest-nova-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "start:heroku": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://srikanta: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@github.com/srikanta30/Interest-Nova-Server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/srikanta30/Interest-Nova-Server/issues"
+  },
+  "homepage": "https://github.com/srikanta30/Interest-Nova-Server#readme",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.1"
+  }
+}
