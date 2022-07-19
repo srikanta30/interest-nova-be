@@ -13,11 +13,9 @@ app.get("/search", async (req, res) => {
 
     try {
 
-        const { searchQuery } = req.query;
+        if (req.query.q) {
 
-        if (searchQuery) {
-
-            const results = await axios.get(`https://graph.facebook.com/search?type=adinterest&q=${searchQuery}&limit=10000&locale=en_US&access_token=1039939589945829|Xy4mSGgfa0zBPdRL_Lc9ldkmEGc`);
+            const results = await axios.get(`https://graph.facebook.com/search?type=adinterest&q=${req.query.q}&limit=10000&locale=en_US&access_token=1039939589945829|Xy4mSGgfa0zBPdRL_Lc9ldkmEGc`);
 
             return res.status(200).json({ success: true, data: results.data });
 
