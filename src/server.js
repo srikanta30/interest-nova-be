@@ -19,7 +19,7 @@ app.get("/search", async (req, res) => {
 
             const results = await axios.get(`https://graph.facebook.com/search?type=adinterest&q=${searchQuery}&limit=10000&locale=en_US&access_token=1039939589945829|Xy4mSGgfa0zBPdRL_Lc9ldkmEGc`);
 
-            return res.status(200).json({ success: true, results: results.data });
+            return res.status(200).json({ success: true, results: [...results.data] });
 
         }
 
