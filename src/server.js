@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const axios = require('axios');
+require('dotenv').config();
 
 app.use(cors());
 
@@ -15,7 +16,7 @@ app.get("/search", async (req, res) => {
 
         if (req.query.q) {
 
-            const results = await axios.get(`https://graph.facebook.com/search?type=adinterest&q=${req.query.q}&limit=10000&locale=en_US&access_token=1039939589945829|Xy4mSGgfa0zBPdRL_Lc9ldkmEGc`);
+            const results = await axios.get(`https://graph.facebook.com/search?type=adinterest&q=${req.query.q}&limit=10000&locale=en_US&access_token=${process.env.ACCESS_TOKEN}`);
 
             return res.status(200).json({ success: true, data: results.data });
 
